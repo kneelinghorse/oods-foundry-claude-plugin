@@ -1,0 +1,12 @@
+{
+  "name": "oods-foundry",
+  "owner": { "name": "OODS Foundry" },
+  "metadata": { "description": "OODS Foundry's MCP server and skill for screens and charts with receipts." },
+  "plugins": [
+    {
+      "name": "oods-foundry",
+      "source": "./oods-foundry",
+      "description": "OODS Foundry's MCP server and a skill for composing screens and rendering charts with receipts."
+    }
+  ]
+}
