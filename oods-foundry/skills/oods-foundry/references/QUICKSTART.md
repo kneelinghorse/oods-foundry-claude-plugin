@@ -2,14 +2,14 @@
 
 This walkthrough turns a team's colour tokens into a brand, registers a trait and object, substitutes a team Button, and produces a Warehouse screen. It also renders and certifies a chart. Chart certification does not certify the surrounding application.
 
-Use Node.js 20.11.1 or newer on macOS or Linux and connect your MCP client as the package README describes. The calls below use the underscore names your client lists. Keep them in one server session: a `schemaRef` expires after 30 minutes. Before starting, choose a fresh user-data folder if you have already registered `Harbor`, `Stockable` or `Warehouse`; creation does not silently overwrite existing work.
+Use Node.js 22.0.0 or newer on macOS or Linux and connect your MCP client as the package README describes. The calls below use the underscore names your client lists. Keep them in one server session: a `schemaRef` expires after 30 minutes. Before starting, choose a fresh user-data folder if you have already registered `Harbor`, `Stockable` or `Warehouse`; creation does not silently overwrite existing work.
 
 ## Get the editable inputs
 
-In your project, install a published version of Foundry and copy its examples outside the installed runtime:
+In your project, install this version of Foundry and copy its examples outside the installed runtime:
 
 ```sh
-npm install @oods/foundry
+npm install @oods/foundry@0.3.2
 cp -R node_modules/@oods/foundry/quickstart ./harbor-design-system
 cd harbor-design-system/team-components
 npm install --ignore-scripts
@@ -18,7 +18,7 @@ npm pack --ignore-scripts
 
 For a release candidate, install its supplied Foundry tarball in the first command. The remaining steps are identical. The last command creates `harbor-example-components-1.0.0.tgz`, used when installing the generated apps. The team package is an editable example, not a published library.
 
-The input folder contains `harbor.tokens.json`, `Stockable.trait.yaml`, `Warehouse.object.yaml` and `team-components/`. Replace their example values with your design system's values as you go. The brand document maps colour values into Forge's named roles; it is not an automatic importer for every design-token format. Keep the base, dark and high-contrast documents and their role names.
+The input folder contains `harbor.tokens.json`, `Stockable.trait.yaml`, `Warehouse.object.yaml` and `team-components/`. Replace their example values with your design system's values as you go. The brand document maps colour values into OODS Foundry's named roles; it is not an automatic importer for every design-token format. Keep the base, dark and high-contrast documents and their role names.
 
 In the calls below, replace `<harbor.tokens.json>` with the parsed JSON document, `<Stockable.trait.yaml>` and `<Warehouse.object.yaml>` with those files' complete text, and `<team-components>` with the copied package's absolute directory. Replace `<schemaRef>`, `<compositionId>` and `<normalizedSpec>` with values returned earlier in the walkthrough. These placeholders are values to substitute, not literal tool arguments.
 
@@ -86,7 +86,7 @@ Read the returned context checks. A missing trait or invalid definition is repor
 
 ## Substitute your component
 
-The example Button expects `caption` and `appearance`, so this mapping translates Forge's `content` and `intent`. Call `map`:
+The example Button expects `caption` and `appearance`, so this mapping translates OODS Foundry's `content` and `intent`. Call `map`:
 
 <!-- quickstart: mapping map -->
 ```json
@@ -161,7 +161,7 @@ Call `code_generate` to receive a complete single-screen app rather than only a 
 {"schemaRef":"<schemaRef>","framework":"vue","profile":"build","options":{"output":"application","brand":"Harbor","theme":"light","payloadMode":"file"}}
 ```
 
-Each result names its payload directory, artifact content hash, dependencies and `validationReceipt`. The build profile checks source statically; read `notChecked` for compilation and browser work that has not run. Copy each artifact's files into a separate app folder. Follow its install block using matching OODS package versions; for an unpublished release candidate use the supplied five OODS tarballs. Install the local `harbor-example-components-1.0.0.tgz` in place of resolving that example package from a registry. Then run the generated app's `npm run build` and `npm run dev` commands.
+Each result names its payload directory, artifact content hash, dependencies and `validationReceipt`. The build profile checks source statically; read `notChecked` for compilation and browser work that has not run. Copy each artifact's files into a separate app folder. Its package.json pins the OODS packages, which install from npm, and the example team package at exact versions. The example package is on no registry, so first install the local `harbor-example-components-1.0.0.tgz` by its path, then follow the install block (`npm install`, then `npm run build`) and run `npm run dev`. For an unpublished release candidate, install its supplied OODS tarballs the same way.
 
 The screen labels its sample data. Connect actions to your application before shipping: the preview's integration notice means that no domain record was changed. Request `context: "workflow"` when you want multiple screens with a local sample store; that store does not supply production persistence.
 

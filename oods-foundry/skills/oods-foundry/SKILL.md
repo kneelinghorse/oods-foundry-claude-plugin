@@ -7,7 +7,7 @@ description: Use OODS Foundry when a team wants screens or charts from its own d
 
 Use the connected Foundry MCP server. Clients expose dotted tool names with underscores, sometimes prefixed by the
 server name. Start with `health`; if the server is unavailable, explain what connection is missing. Do not substitute
-an invented response. Node.js 20.11.1 or newer and macOS or Linux are the recorded environments; Windows is untested.
+an invented response. Node.js 22.0.0 or newer and macOS or Linux are the recorded environments; Windows is untested.
 
 For a team's design system, read [the quickstart](references/QUICKSTART.md) for complete arguments and editable npm
 inputs. Keep calls that share a `schemaRef` in one server session: references expire after 30 minutes. Use the team's

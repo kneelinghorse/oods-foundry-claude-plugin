@@ -1,7 +1,7 @@
 {
   "name": "oods-foundry",
   "description": "OODS Foundry's MCP server and a skill for composing screens and rendering charts with receipts.",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "license": "Apache-2.0",
   "homepage": "https://oods-foundry.com",
   "author": { "name": "OODS Foundry" }
