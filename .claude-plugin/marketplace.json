@@ -1,12 +1,12 @@
 {
   "name": "oods-foundry",
   "owner": { "name": "OODS Foundry" },
-  "metadata": { "description": "OODS Foundry's MCP server and skill for screens and charts with receipts." },
+  "metadata": { "description": "OODS Foundry's MCP server and skill: the object-oriented design system that builds your screens from your objects." },
   "plugins": [
     {
       "name": "oods-foundry",
       "source": "./oods-foundry",
-      "description": "OODS Foundry's MCP server and a skill for composing screens and rendering charts with receipts."
+      "description": "OODS Foundry's MCP server and a skill for building your screens from your own objects, traits and brand."
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 name: oods-foundry
-description: Use OODS Foundry when a team wants screens or charts from its own design system, with receipts. Register its objects, traits and brand roles, substitute its components, preview and generate React or Vue, and inspect chart certification and unchecked work.
+description: Use OODS Foundry when a team wants its screens built from its own objects and design system. Register its objects, traits and brand roles, substitute its components, preview and generate React or Vue, and inspect chart certification and unchecked work.
 ---
 
 # Work with OODS Foundry

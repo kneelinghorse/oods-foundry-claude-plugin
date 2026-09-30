@@ -9,7 +9,7 @@ Use Node.js 22.0.0 or newer on macOS or Linux and connect your MCP client as the
 In your project, install this version of Foundry and copy its examples outside the installed runtime:
 
 ```sh
-npm install @oods/foundry@0.3.2
+npm install @oods/foundry@0.3.3
 cp -R node_modules/@oods/foundry/quickstart ./harbor-design-system
 cd harbor-design-system/team-components
 npm install --ignore-scripts
