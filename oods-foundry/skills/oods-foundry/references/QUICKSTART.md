@@ -9,7 +9,7 @@ Use Node.js 22.0.0 or newer on macOS or Linux and connect your MCP client as the
 In your project, install this version of Foundry and copy its examples outside the installed runtime:
 
 ```sh
-npm install @oods/foundry@0.4.1
+npm install @oods/foundry@0.4.2
 cp -R node_modules/@oods/foundry/quickstart ./harbor-design-system
 cd harbor-design-system/team-components
 npm install --ignore-scripts
@@ -82,7 +82,7 @@ Validate and register the object after its trait exists:
 {"action":"register","yaml":"<Warehouse.object.yaml>"}
 ```
 
-Read the returned context checks. A missing trait or invalid definition is reported with its cause and registration is refused. See `OBJECTS-AND-TRAITS.md` for field types, money semantics and name-collision rules.
+Read the returned context checks. A missing trait or invalid definition is reported with its cause and registration is refused. See `OBJECTS-AND-TRAITS.md` for field types, money semantics, number formats, form controls and name-collision rules.
 
 ## Substitute your component
 
@@ -161,8 +161,8 @@ Call `code_generate` to receive a complete single-screen app rather than only a 
 {"schemaRef":"<schemaRef>","framework":"vue","profile":"build","options":{"output":"application","brand":"Harbor","theme":"light","payloadMode":"file"}}
 ```
 
-Each result names its payload directory, artifact content hash, dependencies and `validationReceipt`. The build profile checks source statically; read `notChecked` for compilation and browser work that has not run. Copy each artifact's files into a separate app folder. Its package.json pins the OODS packages, which install from npm, and the example team package at exact versions. The example package is on no registry, so first install the local `harbor-example-components-1.0.0.tgz` by its path, then follow the install block (`npm install`, then `npm run build`) and run `npm run dev`. For an unpublished release candidate, install its supplied OODS tarballs the same way.
+Each result names its payload directory, artifact content hash, dependencies and `validationReceipt`. The content hashes a clean run of this walkthrough produces are in the package's `quickstart/expected.json`. The build profile checks source statically; read `notChecked` for compilation and browser work that has not run. Copy each artifact's files into a separate app folder. Its package.json pins, at exact versions, the OODS packages its code imports, which install from npm, and the example team package. The example package is on no registry, so first install the local `harbor-example-components-1.0.0.tgz` by its path, then follow the install block (`npm install`, then `npm run build`) and run `npm run dev`. For an unpublished release candidate, install its supplied OODS tarballs the same way.
 
 The screen labels its sample data. Connect actions to your application before shipping: the preview's integration notice means that no domain record was changed. Request `context: "workflow"` when you want multiple screens with a local sample store; that store does not supply production persistence.
 
-All OODS packages here use the Apache License 2.0. Generated output belongs to you; installed dependencies keep their licenses. Retain the returned hashes and receipts when reviewing what you built.
+OODS Foundry's code is under the Apache License 2.0. The fonts it bundles (Geist, Geist Mono and DM Sans) are under the SIL Open Font License 1.1, and its colour scales adapt Radix Colors (MIT); the NOTICE file in `@oods/foundry` carries both licenses. Generated output belongs to you; installed dependencies keep their licenses. Retain the returned hashes and receipts when reviewing what you built.

@@ -2,8 +2,9 @@
 
 This is the Claude Code plugin marketplace for [OODS Foundry](https://oods-foundry.com/). The plugin runs the OODS Foundry
 MCP server from npm and adds the `oods-foundry` skill. With them, Claude composes screens from your design system's
-objects, traits, brands and components, previews and generates React or Vue, and renders and certifies charts. Each
-result comes with a receipt that says what was checked and what was not.
+objects, traits, brands and components, previews and generates React or Vue, and renders and certifies charts. Generated
+code comes with a validation receipt that lists the checks that ran and, under `notChecked`, the ones that did not, and a
+chart's certification names the rules it evaluated.
 
 ## Install
 
@@ -23,9 +24,9 @@ and then `claude plugin update oods-foundry@oods-foundry`.
 - `oods-foundry/.mcp.json`: the MCP server, `npx -y @oods/foundry` at the plugin's exact version.
 - `oods-foundry/skills/oods-foundry/`: the skill and its quickstart reference.
 
-The same server works in any MCP client without this plugin. The
-[@oods/foundry package page](https://www.npmjs.com/package/@oods/foundry) describes setups for Claude Desktop, Claude
-Code and Cursor, and the first run. The server is also listed in the official MCP registry as `com.oods-foundry/foundry`.
+Without this plugin, the same server runs in Claude Desktop, Claude Code and Cursor; the
+[@oods/foundry package page](https://www.npmjs.com/package/@oods/foundry) describes those setups and the first run. The
+server is also listed in the official MCP registry as `com.oods-foundry/foundry`.
 
 ## License
 
