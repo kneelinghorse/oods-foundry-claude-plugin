@@ -45,6 +45,7 @@ to make an unrelated design task work.
 Inspect `status`, typed errors, warnings and findings from every call. Validation may report `valid`; certification
 reports `conformant`, pillar results and evaluated rules. A tool returning successfully is not evidence that every
 check passed. Fix reported input issues before following dependent steps.
+Beside `facts.json`, the package's `errors.json` lists each runtime error code, severity, cause, fix and tools.
 
 For generated code retain `artifact.contentHash`, dependency versions, `validationReceipt` and file-mode paths.
 Read `notChecked` and its reasons: build-profile source checks do not mean the app was compiled or mounted in a
