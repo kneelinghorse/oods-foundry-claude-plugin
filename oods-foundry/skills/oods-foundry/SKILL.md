@@ -5,7 +5,7 @@ description: Use OODS Foundry when a team wants its screens built from its own o
 
 # Work with OODS Foundry
 
-Use the connected Foundry MCP server. Clients expose dotted tool names with underscores, sometimes prefixed by the
+Use the connected OODS Foundry MCP server. Clients expose dotted tool names with underscores, sometimes prefixed by the
 server name. Start with `health`; if the server is unavailable, explain what connection is missing. Do not substitute
 an invented response. Node.js 22.0.0 or newer and macOS or Linux are the recorded environments; Windows is untested.
 

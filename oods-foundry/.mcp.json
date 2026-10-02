@@ -2,7 +2,7 @@
   "mcpServers": {
     "oods-foundry": {
       "command": "npx",
-      "args": ["-y", "@oods/foundry@0.4.3"]
+      "args": ["-y", "@oods/foundry@0.4.4"]
     }
   }
 }

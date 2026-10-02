@@ -4,19 +4,21 @@ This walkthrough turns a team's colour tokens into a brand, registers a trait an
 
 Use Node.js 22.0.0 or newer on macOS or Linux and connect your MCP client as the package README describes. The calls below use the underscore names your client lists. Keep them in one server session: a `schemaRef` expires after 30 minutes. Before starting, choose a fresh user-data folder if you have already registered `Harbor`, `Stockable` or `Warehouse`; creation does not silently overwrite existing work.
 
+A new OODS Foundry process draws its first chart more slowly than the next.
+
 ## Get the editable inputs
 
-In your project, install this version of Foundry and copy its examples outside the installed runtime:
+In your project, install this version of OODS Foundry and copy its examples outside the installed runtime:
 
 ```sh
-npm install @oods/foundry@0.4.3
+npm install @oods/foundry@0.4.4
 cp -R node_modules/@oods/foundry/quickstart ./harbor-design-system
 cd harbor-design-system/team-components
 npm install --ignore-scripts
 npm pack --ignore-scripts
 ```
 
-For a release candidate, install its supplied Foundry tarball in the first command. The remaining steps are identical. The last command creates `harbor-example-components-1.0.0.tgz`, used when installing the generated apps. The team package is an editable example, not a published library.
+For a release candidate, install its supplied OODS Foundry tarball in the first command. The remaining steps are identical. The last command creates `harbor-example-components-1.0.0.tgz`, used when installing the generated apps. The team package is an editable example, not a published library.
 
 The input folder contains `harbor.tokens.json`, `Stockable.trait.yaml`, `Warehouse.object.yaml` and `team-components/`. Replace their example values with your design system's values as you go. The brand document maps colour values into OODS Foundry's named roles; it is not an automatic importer for every design-token format. Keep the base, dark and high-contrast documents and their role names.
 
