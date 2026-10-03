@@ -26,7 +26,8 @@ again and a chart-only request needs only health, rendering and certification.
 7. `object`, `action: "validate"` — validate its object YAML now that the trait exists.
 8. `object`, `action: "register"` — register the validated object; read all context checks.
 9. `map`, `action: "create", apply: true` — substitute a shipped component identity using the team's exact package,
-   version, export and prop translations; use an absolute `localPath` for preview bundling.
+   version, export and prop translations; use an absolute `localPath` for preview bundling, or map several with
+   a `mappings` list or an absolute `mappingsPath` to a checked mapping file.
 10. `design_compose` — name the object, context and brand/theme; retain `schemaRef`, `compositionId` and version.
 11. `viz_render` — pass actual rows and matching encodings; request `includeNormalizedSpec` and `includeA11y`.
 12. `artifact_certify` — pass that `normalizedSpec` and the same brand/theme. For ECharts-primary charts also pass
