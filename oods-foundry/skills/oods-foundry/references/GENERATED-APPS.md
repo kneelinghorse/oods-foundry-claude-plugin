@@ -81,7 +81,7 @@ Other inputs add files. Use the actual returned file list for your generation. T
 
 | When | File | Role | Purpose |
 | --- | --- | --- | --- |
-| Placed charts (empty payment history emits only the three size files) | `src/charts/<record>.svg`, plus `.narrow.svg`, `.wide.svg`, `.dark.svg`, `.dark.narrow.svg`, `.dark.wide.svg`, `.hc.svg`, `.hc.narrow.svg`, `.hc.wide.svg` | Replaced | Chart renders for each record, size and theme; a standalone component uses the same authored sample record as its preview and sample app. |
+| Placed charts (empty payment history emits only the three size files) | `src/charts/<record>.svg`, plus `.narrow.svg`, `.wide.svg`, `.dark.svg`, `.dark.narrow.svg`, `.dark.wide.svg`, `.hc.svg`, `.hc.narrow.svg`, `.hc.wide.svg` | Replaced | Chart renders for each record, size and theme; a standalone payment chart uses the same authored sample record as its preview and sample app. |
 | Workflow declares a chart | `src/chart-assets.ts` | Replaced | Chart render lookup used by the store. |
 | Team brand needs a stylesheet | `src/oods-brand-<lowercase-brand>.css` | Replaced | The selected brand's generated styles. |
 | Team component substitutions, file mode | `component-contracts.json` | Replaced | Component contract report, outside the artifact's source-file list. |
