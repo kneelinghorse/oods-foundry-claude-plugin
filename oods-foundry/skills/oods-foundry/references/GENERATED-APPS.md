@@ -105,3 +105,9 @@ Action declarations carry comments like `@oods-domain-action handleEdit sha256:â
 In the first run's `last_counted_at` edit, both frameworks change the detail component and an application's sample props. Workflow generation also changes its store, sample data, application adapter and all four screen files because the shared data contract changes. That source change does not mean every screen gains a visible row: the trait places the new row only in detail. The action digests stay the same for this edit.
 
 There is no tool that checks an app folder against its artifact file list, no detection or merge of your edits, and no automatic repair of an app after a definition changes.
+
+### Mapped shadcn CSS and assets
+
+Tailwind 4 discovers class names from the surrounding project. A mapped application's built CSS asset name can therefore differ inside and outside a Git repository; the generated artifact contentHash is stable. Build in a consistent project layout when comparing compiled assets.
+
+Binary local assets in `artifact.files` have `encoding: "base64"`. Decode their `contents` when writing them; omitted encoding means UTF-8. The file's contentHash covers the serialized contents, and the artifact hash also binds the encoding. With `payloadMode: "file"`, Foundry writes decoded files and the payload receipt hashes those bytes.
