@@ -110,4 +110,4 @@ There is no tool that checks an app folder against its artifact file list, no de
 
 Tailwind 4 discovers class names from the surrounding project. A mapped application's built CSS asset name can therefore differ inside and outside a Git repository; the generated artifact contentHash is stable. Build in a consistent project layout when comparing compiled assets.
 
-Binary local assets in `artifact.files` have `encoding: "base64"`. Decode their `contents` when writing them; omitted encoding means UTF-8. The file's contentHash covers the serialized contents, and the artifact hash also binds the encoding. With `payloadMode: "file"`, Foundry writes decoded files and the payload receipt hashes those bytes.
+Binary local assets in `artifact.files` have `encoding: "base64"`. Decode their `contents` when writing them; omitted encoding means UTF-8. The file's contentHash covers the serialized contents, and the artifact hash also binds the encoding. With `payloadMode: "file"`, OODS Foundry writes decoded files and the payload receipt hashes those bytes.
