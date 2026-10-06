@@ -5,8 +5,8 @@ description: Use OODS Foundry when a team wants its screens built from its own o
 
 # Work with OODS Foundry
 
-Use the connected OODS Foundry MCP server. Clients expose dotted tool names with underscores, sometimes prefixed by the
-server name. Start with `health`; if the server is unavailable, explain what connection is missing. Do not substitute
+Use the connected OODS Foundry MCP server. Clients expose lowercase tool names joined by underscores, sometimes prefixed by the
+server name. Start with `health_check`; if the server is unavailable, explain what connection is missing. Do not substitute
 an invented response. Node.js 22.0.0 or newer and macOS or Linux are the recorded environments; Windows is untested.
 
 For a team's design system, read [the quickstart](references/QUICKSTART.md) for complete arguments and editable npm
@@ -17,17 +17,17 @@ again and a chart-only request needs only health, rendering and certification.
 
 ## Ordered quickstart calls
 
-1. `health` — check `status`, version, registered objects and any rejected user definitions.
-2. `brand_intake`, `action: "template"` — inspect the colour roles.
-3. `brand_intake`, `action: "validate"` — validate the team's base/dark/high-contrast documents.
-4. `brand_intake`, `action: "create"` — after `valid: true`, create the requested brand in the user's data folder.
-5. `object`, `action: "validate"` — validate the team's trait YAML.
-6. `object`, `action: "register"` — register the validated trait.
-7. `object`, `action: "validate"` — validate its object YAML now that the trait exists.
-8. `object`, `action: "register"` — register the validated object; read all context checks.
-9. `map`, `action: "create", apply: true` — substitute a shipped component identity using the team's exact package,
+1. `health_check` — check `status`, version, registered objects and any rejected user definitions.
+2. `brand_create`, `action: "template"` — inspect the colour roles.
+3. `brand_create`, `action: "validate"` — validate the team's base/dark/high-contrast documents.
+4. `brand_create`, `action: "create"` — after `valid: true`, create the requested brand in the user's data folder.
+5. `object_registry`, `action: "validate"` — validate the team's trait YAML.
+6. `object_registry`, `action: "register"` — register the validated trait.
+7. `object_registry`, `action: "validate"` — validate its object YAML now that the trait exists.
+8. `object_registry`, `action: "register"` — register the validated object; read all context checks.
+9. `component_map`, `action: "create", apply: true` — substitute a shipped component identity using the team's exact package,
    version, export and prop translations; use an absolute `localPath` for preview bundling, or map several with
-   a `mappings` list or an absolute `mappingsPath` to a checked mapping file; React teams on shadcn/ui's Radix or Base UI base can install the shipped adapters and map their project modules as [COMPONENTS.md](https://cdn.jsdelivr.net/npm/@oods/foundry@0.6.2/COMPONENTS.md) describes.
+   a `mappings` list or an absolute `mappingsPath` to a checked mapping file; React teams on shadcn/ui's Radix or Base UI base can install the shipped adapters and map their project modules as [COMPONENTS.md](https://cdn.jsdelivr.net/npm/@oods/foundry@0.7.0/COMPONENTS.md) describes.
 10. `design_compose` — name the object, context and brand/theme; retain `schemaRef`, `compositionId` and version.
 11. `viz_render` — pass actual rows and matching encodings; request `includeNormalizedSpec` and `includeA11y`.
 12. `artifact_certify` — pass that `normalizedSpec` and the same brand/theme. For ECharts-primary charts also pass
@@ -68,5 +68,5 @@ precondition is missing did not pass. High contrast's forced-colour exemption is
 - HTML output is a static sample document. Rendering it is not proof of universal framework or theme parity.
 - Preview links are local by default; presentation inside a conversation depends on the MCP host. Claude Code
   displays text results. Do not claim a client was tested without a receipt from that client.
-- `health` exposes retained proof summaries. A test's directory or a coverage count is not independent acceptance.
+- `health_check` exposes retained proof summaries. A test's directory or a coverage count is not independent acceptance.
   Report exactly which checks ran, which failed and which remain unchecked.

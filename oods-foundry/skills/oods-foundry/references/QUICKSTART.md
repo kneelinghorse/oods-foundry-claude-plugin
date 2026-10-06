@@ -9,7 +9,7 @@ Use Node.js 22.0.0 or newer on macOS or Linux and connect your MCP client as the
 In your project, install this version of OODS Foundry and copy its examples outside the installed runtime:
 
 ```sh
-npm install @oods/foundry@0.6.2
+npm install @oods/foundry@0.7.0
 cp -R node_modules/@oods/foundry/quickstart ./harbor-design-system
 ```
 
@@ -227,30 +227,30 @@ Replace `<harbor.tokens.json>` with the parsed JSON document, `<Stockable.trait.
 
 ### Register your brand
 
-Ask your assistant to make each named call. Start with `health`:
+Ask your assistant to make each named call. Start with `health_check`:
 
-<!-- quickstart: health health -->
+<!-- quickstart: health health_check -->
 ```json
 {}
 ```
 
-Then `brand_intake` with `template` to inspect the roles and descriptions:
+Then `brand_create` with `template` to inspect the roles and descriptions:
 
-<!-- quickstart: template brand_intake -->
+<!-- quickstart: template brand_create -->
 ```json
 {"action":"template"}
 ```
 
-The supplied Harbor document has a complete set of values. Change values, then call `brand_intake` with `validate`. Fix each reported issue before creating the brand; a failed contrast check includes the pair, measured ratio and required floor.
+The supplied Harbor document has a complete set of values. Change values, then call `brand_create` with `validate`. Fix each reported issue before creating the brand; a failed contrast check includes the pair, measured ratio and required floor.
 
-<!-- quickstart: brand-validate brand_intake -->
+<!-- quickstart: brand-validate brand_create -->
 ```json
 {"action":"validate","brand_id":"Harbor","documents":"<harbor.tokens.json>"}
 ```
 
 When `valid` is true, create it:
 
-<!-- quickstart: brand-create brand_intake -->
+<!-- quickstart: brand-create brand_create -->
 ```json
 {"action":"create","brand_id":"Harbor","documents":"<harbor.tokens.json>"}
 ```
@@ -259,28 +259,28 @@ The result names the written files and token build. Your brand lives outside the
 
 ### Register your trait and object
 
-`Stockable` supplies stock fields and views; `Warehouse` combines it with shipped lifecycle traits and authors ten sample warehouses. Their authored values keep each site's operating status, status history, stock, last restock, manager and operating organization coherent, so the detail screen shows no placeholders. Start with `object` to validate the trait:
+`Stockable` supplies stock fields and views; `Warehouse` combines it with shipped lifecycle traits and authors ten sample warehouses. Their authored values keep each site's operating status, status history, stock, last restock, manager and operating organization coherent, so the detail screen shows no placeholders. Start with `object_registry` to validate the trait:
 
-<!-- quickstart: trait-validate object -->
+<!-- quickstart: trait-validate object_registry -->
 ```json
 {"action":"validate","yaml":"<Stockable.trait.yaml>"}
 ```
 
 Register it only after `valid: true`:
 
-<!-- quickstart: trait-register object -->
+<!-- quickstart: trait-register object_registry -->
 ```json
 {"action":"register","yaml":"<Stockable.trait.yaml>"}
 ```
 
 Validate and register the object after its trait exists:
 
-<!-- quickstart: object-validate object -->
+<!-- quickstart: object-validate object_registry -->
 ```json
 {"action":"validate","yaml":"<Warehouse.object.yaml>"}
 ```
 
-<!-- quickstart: object-register object -->
+<!-- quickstart: object-register object_registry -->
 ```json
 {"action":"register","yaml":"<Warehouse.object.yaml>"}
 ```
@@ -289,9 +289,9 @@ Read the returned context checks. A missing trait or invalid definition is repor
 
 ### Substitute your component
 
-The example Button expects `caption` and `appearance`, so this mapping translates OODS Foundry's `content` and `intent`. Call `map`:
+The example Button expects `caption` and `appearance`, so this mapping translates OODS Foundry's `content` and `intent`. Call `component_map`:
 
-<!-- quickstart: mapping map -->
+<!-- quickstart: mapping component_map -->
 ```json
 {
   "action":"create","apply":true,"externalSystem":"harbor",
