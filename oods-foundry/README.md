@@ -1,5 +1,7 @@
 # OODS Foundry for Claude Code
 
+OODS Foundry is open source (Apache-2.0). [Source and issues](https://github.com/kneelinghorse/OODS-Foundry).
+
 This plugin gives your assistant the OODS Foundry MCP server and a skill for turning your objects, traits, brand and components into governed React and Vue screens. It also renders charts from your data and reports their certification findings.
 
 The server runs the pinned `npx -y @oods/foundry@0.7.0`. Install with Node.js 22.0.0 or newer on macOS or Linux:
